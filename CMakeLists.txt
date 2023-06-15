@@ -35,17 +35,6 @@ if (MINGW)
     target_link_options(dmusic-shared PUBLIC "-static")
 endif()
 
-# Add the --export-dynamic flag to export all symbols in the shared library.
-if (UNIX)
-    target_link_options(dmusic-shared PUBLIC "-Wl,--export-dynamic")
-endif()
-
-# Set the CMAKE_SHARED_LINKER_FLAGS and CMAKE_EXE_LINKER_FLAGS variables to export debug symbols.
-if (MSVC)
-    set(CMAKE_SHARED_LINKER_FLAGS "/DEBUG")
-    set(CMAKE_EXE_LINKER_FLAGS "/DEBUG:FULL")
-endif()
-
 install(TARGETS dmusic-shared ARCHIVE LIBRARY RUNTIME)
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/dmusic" TYPE INCLUDE)
 
