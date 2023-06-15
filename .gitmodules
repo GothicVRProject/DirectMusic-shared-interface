@@ -1,0 +1,3 @@
+[submodule "vendor/dmusic"]
+	path = vendor/dmusic
+	url = https://github.com/GothicVRProject/DirectMusic
